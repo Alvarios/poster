@@ -7,8 +7,18 @@ A reverse http utility tool to easily send requests to other servers.
 Send a post request from go, in `application/json` format.
 
 ```go
-// payload is a map[string]interface{}
-res, err := httpUtils.Post(url, payload)
+package my_package
+
+import "github.com/Alvarios/poster"
+
+func main() {
+    payload := map[string]interface{}{
+        "message": "hello from go",
+    }
+
+    // payload is a map[string]interface{}
+    res, err := poster.Post("https://www.domain.com/url", payload)
+}
 ```
 
 ## PostForm
@@ -16,15 +26,25 @@ res, err := httpUtils.Post(url, payload)
 Send a post request from go, with a form content.
 
 ```go
-files := []httpUtils.File{
-    {
-        Path: '/path/to/my/file',
-        Key: 'file'
-    }
-}
+package my_package
 
-// payload is a map[string]interface{}
-res, err := httpUtils.PostForm(url, payload, files)
+import "github.com/Alvarios/poster"
+
+func main() {
+    payload := map[string]interface{}{
+        "message": "hello from go",
+    }
+
+    files := []poster.PostFile{
+        poster.PostFile{
+            Path: "local/path/to/my/file",
+            Key: "filename",
+        },
+    }
+
+    // payload is a map[string]interface{}
+    res, err := poster.PostForm("https://www.domain.com/url", payload, files)
+}
 ```
 
 ## Copyright

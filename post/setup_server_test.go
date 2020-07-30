@@ -1,4 +1,4 @@
-package poster
+package post
 
 import (
 	"github.com/gin-gonic/gin"
