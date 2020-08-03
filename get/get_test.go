@@ -1,4 +1,4 @@
-package post
+package get
 
 import (
 	"fmt"
@@ -10,8 +10,8 @@ import (
 	"testing"
 )
 
-func checkPostJSON(t *testing.T, url string, c map[string]interface{}, expected string) {
-	resp, err := Post(url, c)
+func checkGetJSON(t *testing.T, url string, expected string) {
+	resp, err := Get(url)
 
 	if err != nil {
 		t.Errorf("error in post test : %s", err.Error())
@@ -56,5 +56,5 @@ func TestPost(t *testing.T) {
 		return
 	}
 
-	checkPostJSON(t, tsUrl("post_json"), map[string]interface{}{"message" : "value"}, "{\"status\":\"posted\"}")
+	checkGetJSON(t, tsUrl("get_json"), "{\"status\":\"posted\"}")
 }

@@ -1,9 +1,13 @@
 package poster
 
-import "github.com/Alvarios/poster/post"
+import (
+	"github.com/Alvarios/poster/get"
+	"github.com/Alvarios/poster/post"
+)
 
 var Post = post.Post
+var Get = get.Get
 
 func main() {
-	_ = Post
+	_ , _ = Post, Get
 }

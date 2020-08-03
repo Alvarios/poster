@@ -20,8 +20,22 @@ func main() {
         "message": "hello from go",
     }
 
-    // payload is a map[string]interface{}
+    // payload has to be JSON friendly
     res, err := poster.Post("https://www.domain.com/url", payload)
+}
+```
+
+## Get
+
+Get request to a http server.
+
+```go
+package my_package
+
+import "github.com/Alvarios/poster"
+
+func main() {
+    res, err := poster.Get("https://www.domain.com/url")
 }
 ```
 
