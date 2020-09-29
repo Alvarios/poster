@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func Post(u string, d map[string]interface{}) (*http.Response, error) {
+func Post(u string, d interface{}) (*http.Response, error) {
 	jsonString, err := json.Marshal(d)
 	if err != nil {
 		return nil, err
