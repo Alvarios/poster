@@ -40,4 +40,4 @@ func main() {
 ```
 
 ## Copyright
-2020 Kushuh - [MIT license](https://github.com/Alvarios/poster/blob/master/LICENSE)
+[License MIT](https://github.com/Alvarios/poster/blob/master/LICENSE), licensed by Kushuh with Alvarios.
